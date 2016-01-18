@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Palloanimaatio</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="otsikko">
+                        <h1 >Palloanimaatio (HTML5, JavaScript, jQuery)</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+
+                    <p>Aloita klikkaamalla arvo pallo -painiketta ja sen jälkeen lisää pallo -painiketta. Voit lisätä
+                        palloja haluamillasi arvoilla täyttämällä ne vastaaviin kenttiin ja painamalla lisää pallo -painiketta.
+                    </p>
+                    <canvas id="myCanvas" class="reunus" width="600" height="300"></canvas>
+                    <p></p>
+                    <h3>Uusi satunnainen pallo</h3>
+                    <button onclick="randomBall()">Lisää satunnainen pallo</button>
+                    <h3>Uusi parametrien mukainen pallo</h3>
+                    <form>
+
+                        x-koordinaatti: <input type="text" id="xCoord"></br>
+                        y-koordinaatti: <input type="text" id="yCoord"></br>
+                        vaakanopeus: <input type="text" id="xVel"></br>
+                        pystynopeus: <input type="text" id="yVel"></br>
+                        säde: <input type="text" id="rad"></br>
+                        väri (#123ABC): <input type="text" id="color"></br>
+
+
+                    </form>
+                    <button onclick="randomFillForm()">Arvo uudet parametrit</button><br>
+                    <button onclick="addBall()">Lisää pallo ruudulle</button>
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Ruudulla olevat pallot (<span id="pallojenMaara"></span> kpl)</h3>
+                    <div id="pallodata">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="jquery-2.1.4.min.js"></script>
+        <script src="palloanimaatio.js"></script>
+    </body>
+</html>
