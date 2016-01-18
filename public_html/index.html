@@ -26,8 +26,9 @@ and open the template in the editor.
             <div class="row">
                 <div class="col-md-8">
 
-                    <p>Aloita klikkaamalla arvo pallo -painiketta ja sen jälkeen lisää pallo -painiketta. Voit lisätä
-                        palloja haluamillasi arvoilla täyttämällä ne vastaaviin kenttiin ja painamalla lisää pallo -painiketta.
+                    <p>Lisää animaatioon palloja "lisää satunnainen pallo" -painikkeella. Voit
+                        lisätä haluamiesi parametrien mukaisen uuden pallon täyttämällä lomakkeen
+                        "uusi parametrien mukainen pallo".
                     </p>
                     <canvas id="myCanvas" class="reunus" width="600" height="300"></canvas>
                     <p></p>
@@ -45,8 +46,8 @@ and open the template in the editor.
 
 
                     </form>
-                    <button onclick="randomFillForm()">Arvo uudet parametrit</button><br>
-                    <button onclick="addBall()">Lisää pallo ruudulle</button>
+                    <button class="button-marg" onclick="randomFillForm()">Täytä kentät satunnaisilla arvoilla</button><br>
+                    <button class="button-marg" onclick="addBall()">Lisää pallo ruudulle</button>
                     <p></p>
                 </div>
                 <div class="col-md-4">
