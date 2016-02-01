@@ -73,12 +73,7 @@ function addBall() {
     var index = pallot.length;
     console.log(pallot[pallot.length - 1]);
     var vari = pallot[pallot.length - 1].color;
-    var str = "<div id=\"" + index + "\" class=\"pallolista\">";
-    str += "<span style=\"background: " + vari + ";\">Pallo " + index + " </span> ";
-    str += "<button onclick=\"removeBall(" + index + ")\">Poista</button></div>";
-//    console.log("<div id=\"pallo" + index + "\" class=\"pallolista\">Pallo " + index + " <button onclick=\"poistaPallo(" + index + ")\">Poista</button></div>");
-    $("#pallodata").append(str);
-
+    addBallToList(index, vari);
     clearForm();
 }
 
@@ -88,18 +83,30 @@ function removeBall(index) {
     updateBallData();
 }
 
-function updateBallData() {
+function updateBallData(i, vari) {
     $("#pallodata").empty();
     for (var i = 0; i < pallot.length; i++) {
         var numero = i + 1;
-        var tunnus = 'pallo' + numero;
         var vari = pallot[i].color;
-        var str = "<div id=\"" + tunnus + "\" class=\"pallolista\">";
-        str += "<span style=\"background: " + vari + ";\">Pallo " + numero + " </span> ";
-        str += "<button onclick=\"removeBall(" + numero + ")\">Poista</button></div>";
-        $("#pallodata").append(str);
-
+        addBallToList(numero, vari);
     }
+}
+
+function addBallToList(index, vari) {
+    var div = document.createElement('div');
+    $(div).attr('id', index);
+    $(div).attr('style', 'width: 100%; background-color: ' + vari + ';');
+    $(div).addClass('listattuPallo');
+    var nappula = document.createElement('button');
+    $(nappula).attr('onClick', "removeBall(" + index + ");");
+    $(nappula).append("Poista");
+    var innerDiv = document.createElement("div");
+    $(innerDiv).append("Pallo " + index);
+    $(innerDiv).addClass('palloTeksti');
+    $(div).append(innerDiv);
+    $(div).append(nappula);
+    $("#pallodata").append(div);
+
 }
 
 function clearForm() {
@@ -138,4 +145,3 @@ drawFrame();
 
 
 
-//ctx.fillRect(0,0,canvas.width,canvas.height);

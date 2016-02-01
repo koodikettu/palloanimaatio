@@ -25,15 +25,21 @@ body {
     border-color: #555555;
 }
 
-.pallolista {
+/*.pallolista {
     padding: 0 5em 0 1em;
-    /*    float: left;*/
+        float: left;
 
-}
-
-/*#pallodata {
-    width: 600px;
 }*/
 
+.listattuPallo {
+    padding: 0.5em;
+    display: inline-block;
+}
+
+.palloTeksti {
+    float: left;
+    width: 60px;
+    display: inline;
+}
 
 
